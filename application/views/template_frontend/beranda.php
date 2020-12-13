@@ -65,21 +65,11 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#about">About Us</a>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#contact">Contect Us</a>
+                        <a class="nav-link js-scroll-trigger" href="<?= base_url('assets1/'); ?>#contact">Login</a>
                     </li>
                 </ul>
             </div>
@@ -104,37 +94,37 @@
     </div><!-- .ct-header -->
 
     <div id="about" class="section wb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="message-box">
-                        <h2>Pariwisata Desa Mayong - Bali</h2>
-                        <p> Singaraja (Antaranews Bali) - Warga Desa Mayong, Kecamatan Seririt, Kabupaten Buleleng, mempertahankan persawahan dan perkebunan untuk ketahanan pangan sekaligus daya tarik wisata, mengingat wisatawan luar negeri sudah mengenal desa itu sebagai desa agraris yang unik di Bali utara. </p>
-                        <p>"Wisatawan selama ini mengenal objek wisata pertanian dengan terasering persawahan di Tabanan, Badung atau Gianyar. Kini sudah banyak pelancong yang tahu bahwa di wilayah Bali utara juga terdapat objek wisata serupa yang tidak kalah menarik," kata Wakil Ketua Kelompok Sadar Wisata (pokdarwis) Desa Mayong Putu Orbawan, Senin.</p>
-                        <p>Ia mengatakan, Subak Poh Asem di Desa Mayong tahun 2010 lalu sempat maju dalam lomba perkumpulan petani pemakai air tingkat nasional setelah keluar sebagai juara I lomba subak se-Provinsi Bali.
-                        </p>
+        <?php foreach ($informasi as $val) { ?>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="message-box">
+                            <h2>Pariwisata Desa Mayong - Bali</h2>
+                            <p> <?= $val['deskripsi']; ?> </p>
+                            </p>
 
-                        <ul>
-                            <li><b>Follow Me</b></li>
-                            <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                        </ul>
+                            <ul>
+                                <li><b>Follow Me</b></li>
+                                <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="<?= base_url('assets1/'); ?>#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            </ul>
 
-                        <a class="btn-new from-middle animated" href="<?= base_url('assets1/'); ?>#">Baca Selengkapnya</a>
-                    </div><!-- end messagebox -->
-                </div><!-- end col -->
+                            <a class="btn-new from-middle animated" href="<?= base_url('assets1/'); ?>google.com">Baca Selengkapnya</a>
+                        </div><!-- end messagebox -->
+                    </div><!-- end col -->
 
-                <div class="col-md-6">
-                    <div class="right-box-pro wow fadeIn">
-                        <img src="<?= base_url('assets1/'); ?>images/mayong3.jpg" alt="" class="img-fluid img-rounded fat-ab">
-                    </div><!-- end media -->
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
+                    <div class="col-md-6">
+                        <div class="right-box-pro wow fadeIn">
+                            <img src="<?= base_url('assets1/'); ?>images/mayong3.jpg" alt="" class="img-fluid img-rounded fat-ab">
+                        </div><!-- end media -->
+                    </div><!-- end col -->
+                <?php } ?>
+                </div><!-- end row -->
+            </div><!-- end container -->
     </div><!-- end section -->
 
 
@@ -146,143 +136,96 @@
             </div><!-- end title -->
 
             <div class="gallery-list row">
-                <div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
-                    <div class="gallery-single spi-hr fix hover">
-                        <img width="500" height="180" src="<?= base_url('assets1/'); ?>images/kik.png" class="img-fluid" alt="Image">
-                        <div class="text-hover">
-                            <h3>Traking Desa Mayong</h3>
-                            <h4>Lorem ipsum</h4>
+                <?php foreach ($daftar_wisata as $val) { ?>
+
+                    <div class="col-md-4 col-sm-6 gallery-grid gal_a gal_b">
+                        <div class="gallery-single spi-hr fix hover">
+                            <img width="360" height="180" src="<?= base_url('media/images/' . $val['foto']); ?>" alt="">
+                            <div class="text-hover">
+                                <h3><?= $val['nama_wisata']; ?> </h3>
+                            </div>
+                            <div class="img-overlay">
+                                <a href="'Frontend/detail_jasa/' . $val['id_jasa']" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="fa fa-picture-o"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 gallery-grid gal_c gal_b">
-                    <div class="gallery-single spi-hr fix">
-                        <img src="<?= base_url('assets1/'); ?>images/ayunan.jpg" class="img-fluid" alt="Image">
-                        <div class="text-hover">
-                            <h3>Logo design</h3>
-                            <h4>Lorem ipsum</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 gallery-grid gal_a gal_c">
-                    <div class="gallery-single spi-hr fix">
-                        <img src="<?= base_url('assets1/'); ?>images/ayunan1.jpg" class="img-fluid" alt="Image">
-                        <div class="text-hover">
-                            <h3>App design</h3>
-                            <h4>Lorem ipsum</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 gallery-grid gal_b gal_a">
-                    <div class="gallery-single spi-hr fix">
-                        <img src="<?= base_url('assets1/'); ?>images/loloh.jpg" class="img-fluid" alt="Image">
-                        <div class="text-hover">
-                            <h3>Logo design</h3>
-                            <h4>Lorem ipsum</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 gallery-grid gal_a gal_c">
-                    <div class="gallery-single spi-hr fix">
-                        <img src="<?= base_url('assets1/'); ?>images/kumpul.png" class="img-fluid" alt="Image">
-                        <div class="text-hover">
-                            <h3>App design</h3>
-                            <h4>Lorem ipsum</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6 gallery-grid gal_c gal_a">
-                    <div class="gallery-single spi-hr fix">
-                        <img src="<?= base_url('assets1/'); ?>images/mayong2.png" class="img-fluid" alt="Image">
-                        <div class="text-hover">
-                            <h3>Logo design</h3>
-                            <h4>Lorem ipsum</h4>
-
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
-    </div>
 
 
-    <div id="contact" class="section db">
-        <div class="container">
-            <div class="section-title text-center">
-                <h3>Contact Me</h3>
-                <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
-            </div><!-- end title -->
+        <div id="contact" class="section db">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h3>Contact Me</h3>
+                    <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus.</p>
+                </div><!-- end title -->
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="contact_form">
-                        <div id="message"></div>
-                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input class="form-control" id="name" type="text" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name.">
-                                        <p class="help-block text-danger"></p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contact_form">
+                            <div id="message"></div>
+                            <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input class="form-control" id="name" type="text" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" id="email" type="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email address.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone number.">
+                                            <p class="help-block text-danger"></p>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input class="form-control" id="email" type="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email address.">
-                                        <p class="help-block text-danger"></p>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="message" placeholder="Your Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input class="form-control" id="phone" type="tel" placeholder="Your Phone" required="required" data-validation-required-message="Please enter your phone number.">
-                                        <p class="help-block text-danger"></p>
+                                    <div class="clearfix"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <div id="success"></div>
+                                        <button id="sendMessageButton" class="sim-btn btn-new from-middle animated" data-text="Send Message" type="submit">Send Message</button>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" required="required" data-validation-required-message="Please enter a message."></textarea>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="col-lg-12 text-center">
-                                    <div id="success"></div>
-                                    <button id="sendMessageButton" class="sim-btn btn-new from-middle animated" data-text="Send Message" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end section -->
+
+        <div class="copyrights">
+            <div class="container">
+                <div class="footer-distributed">
+                    <div class="footer-left">
+                        <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="<?= base_url('assets1/'); ?>#">Nickie</a> Design By :
+                            <a href="<?= base_url('assets1/'); ?>https://html.design/">html design</a></p>
                     </div>
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
-    <div class="copyrights">
-        <div class="container">
-            <div class="footer-distributed">
-                <div class="footer-left">
-                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="<?= base_url('assets1/'); ?>#">Nickie</a> Design By :
-                        <a href="<?= base_url('assets1/'); ?>https://html.design/">html design</a></p>
                 </div>
-            </div>
-        </div><!-- end container -->
-    </div><!-- end copyrights -->
+            </div><!-- end container -->
+        </div><!-- end copyrights -->
 
-    <a href="<?= base_url('assets1/'); ?>#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+        <a href="<?= base_url('assets1/'); ?>#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
-    <!-- ALL JS FILES -->
-    <script src="<?= base_url('assets1/'); ?>js/all.js"></script>
-    <!-- Camera Slider -->
-    <script src="<?= base_url('assets1/'); ?>js/jquery.mobile.customized.min.js"></script>
-    <script src="<?= base_url('assets1/'); ?>js/jquery.easing.1.3.js"></script>
-    <script src="<?= base_url('assets1/'); ?>js/parallaxie.js"></script>
-    <script src="<?= base_url('assets1/'); ?>js/slick.min.js"></script>
-    <script src="<?= base_url('assets1/'); ?>js/animated-slider.js"></script>
-    <!-- Contact form JavaScript -->
-    <script src="<?= base_url('assets1/'); ?>js/jqBootstrapValidation.js"></script>
-    <script src="<?= base_url('assets1/'); ?>js/contact_me.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="<?= base_url('assets1/'); ?>js/custom.js"></script>
+        <!-- ALL JS FILES -->
+        <script src="<?= base_url('assets1/'); ?>js/all.js"></script>
+        <!-- Camera Slider -->
+        <script src="<?= base_url('assets1/'); ?>js/jquery.mobile.customized.min.js"></script>
+        <script src="<?= base_url('assets1/'); ?>js/jquery.easing.1.3.js"></script>
+        <script src="<?= base_url('assets1/'); ?>js/parallaxie.js"></script>
+        <script src="<?= base_url('assets1/'); ?>js/slick.min.js"></script>
+        <script src="<?= base_url('assets1/'); ?>js/animated-slider.js"></script>
+        <!-- Contact form JavaScript -->
+        <script src="<?= base_url('assets1/'); ?>js/jqBootstrapValidation.js"></script>
+        <script src="<?= base_url('assets1/'); ?>js/contact_me.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="<?= base_url('assets1/'); ?>js/custom.js"></script>
 </body>
 
 </html>

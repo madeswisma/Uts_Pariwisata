@@ -4,9 +4,8 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-book-open"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Web Service</sup></div>
+        <div class="sidebar-brand-text mx-3">Wisata Desa Mayong</sup></div>
     </a>
 
     <!-- Divider -->
@@ -29,16 +28,16 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= base_url('Backend/data_wisata'); ?>">
+        <a class="nav-link collapsed" href="<?= base_url('Backend/daftar_wisata'); ?>">
             <i class="fas fa-fw fa-edit"></i>
             <span>Daftar Wisata</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= base_url('backend/daftar_kategori'); ?>">
+        <a class="nav-link collapsed" href="<?= base_url('backend/daftar_informasi'); ?>">
             <i class="fas fa-fw fa-edit"></i>
-            <span>Daftar Kategori</span>
+            <span>Daftar Informasi</span>
         </a>
     </li>
 

@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-15">
+                <div class="col-md-12">
                     <!-- jquery validation -->
                     <div class="card card-primary">
                         <div class="card-header">
@@ -27,8 +27,18 @@
                             <input type="hidden" name="id_wisata" value="<?= (isset($id_wisata['id_wisata'])) ? md5($id_wisata['id_wisata']) : ''; ?>">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nama Wisata</label>
-                                    <input type="text" name="nama_wisata" class="form-control" id="nama_wisata" placeholder="Masukan Nama Wisata" value="<?= (isset($id_wisata['nama_wisata'])) ? ($id_wisata['nama_wisata']) : ''; ?>">
+
+                                    <label for="exampleInputEmail1">Masukan Nama Wisata</label>
+                                    <select name="nama_wisata" class="form-control" value="<?= (isset($id_wisata['nama_wisata'])) ? ($id_wisata['nama_wisata']) : ''; ?>">
+                                        <option>--Silahkan Pilih Wisata--</option>
+                                        <option value="Mayong Selfie">Mayong Selfie</option>
+                                        <option value="Nature Tracking">Nature Tracking</option>
+                                        <option value="Ayunan">Ayunan</option>
+                                        <option value="Rest Area View">Rest Area View</option>
+                                        <option value="Loloh Pak Arya">Loloh Pak Arya</option>
+                                        <option value="Beautiful Secenery">Beautiful Secenery</option>
+                                    </select>
+
                                 </div>
                             </div>
 

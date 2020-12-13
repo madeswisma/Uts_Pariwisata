@@ -13,9 +13,9 @@ class Backend extends CI_Controller
         $data['title'] = 'Dashboard';
         $this->load->view('template_backend/header', $data);
         $this->load->view('template_backend/sidebar', $data);
-        $this->load->view('Backend/dashboard', $data);
         $this->load->view('template_backend/topbar', $data);
-        $this->load->view('template_backend/footer', $data);
+        $this->load->view('backend/dashboard', $data);
+        $this->load->view('template_backend/footer');
     }
     //daftar Wisata-----------------------
     function daftar_wisata()
@@ -26,8 +26,8 @@ class Backend extends CI_Controller
 
         $this->load->view('template_backend/header', $data);
         $this->load->view('template_backend/sidebar', $data);
-        $this->load->view('backend/data_wisata', $data);
         $this->load->view('template_backend/topbar', $data);
+        $this->load->view('backend/data_wisata', $data);
         $this->load->view('template_backend/footer');
     }
     function register_wisata()
@@ -36,8 +36,8 @@ class Backend extends CI_Controller
 
         $this->load->view('template_backend/header', $data);
         $this->load->view('template_backend/sidebar', $data);
-        $this->load->view('backend/register_data_wisata', $data);
         $this->load->view('template_backend/topbar', $data);
+        $this->load->view('backend/register_data_wisata', $data);
         $this->load->view('template_backend/footer');
     }
 
@@ -93,5 +93,47 @@ class Backend extends CI_Controller
         $this->load->view('backend/data_wisata', $data);
         $this->load->view('template_backend/topbar', $data);
         $this->load->view('template_backend/footer');
+    }
+
+    //Daftar Infomasi
+    function daftar_informasi()
+    {
+        $data['title'] = "Daftar Wisata";
+        $data['tb_informasi'] = $this->M_data->data_infromasi();
+
+        $this->load->view('template_backend/header', $data);
+        $this->load->view('template_backend/sidebar', $data);
+        $this->load->view('template_backend/topbar', $data);
+        $this->load->view('backend/data_informasi', $data);
+        $this->load->view('template_backend/footer');
+    }
+    function register_informasi()
+    {
+        $data['title'] = "Register Data Wisata";
+
+        $this->load->view('template_backend/header', $data);
+        $this->load->view('template_backend/sidebar', $data);
+        $this->load->view('template_backend/topbar', $data);
+        $this->load->view('backend/register_informasi', $data);
+        $this->load->view('template_backend/footer');
+    }
+    public function update_informasi($id_informasi)
+    {
+        $data['title'] = "Update Informasi";
+        $this->db->where('md5(id_informasi)', $id_informasi);
+        $data['id_informasi'] = $this->db->get('tb_informasi')->row_array();
+        $this->load->view('template_backend/header', $data);
+        $this->load->view('template_backend/sidebar', $data);
+        $this->load->view('Backend/register_informasi', $data);
+        $this->load->view('template_backend/footer');
+    }
+    public function save_infomasi()
+    {
+        if ($_POST['id_informasi'] != '') {
+            $this->M_data->save_update_informasi($_POST);
+        } else {
+            $this->M_data->save_update_informasi($_POST);
+        }
+        redirect('Backend/daftar_informasi');
     }
 }

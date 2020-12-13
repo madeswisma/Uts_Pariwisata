@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Nov 2020 pada 16.06
+-- Waktu pembuatan: 13 Des 2020 pada 15.30
 -- Versi server: 10.3.15-MariaDB
 -- Versi PHP: 7.3.6
 
@@ -34,7 +34,6 @@ CREATE TABLE `daftar_wisata` (
   `jam_buka` varchar(100) NOT NULL,
   `jam_tutup` varchar(100) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
-  `harga_tiket` varchar(200) NOT NULL,
   `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,8 +41,33 @@ CREATE TABLE `daftar_wisata` (
 -- Dumping data untuk tabel `daftar_wisata`
 --
 
-INSERT INTO `daftar_wisata` (`id_wisata`, `nama_wisata`, `jam_buka`, `jam_tutup`, `deskripsi`, `harga_tiket`, `foto`) VALUES
-(1, 'Mayong Selfie', '08.00', '18.00', 'Ayo Buruan Ke Mayong Selfie', '10.000', 'ayunan1.jpg');
+INSERT INTO `daftar_wisata` (`id_wisata`, `nama_wisata`, `jam_buka`, `jam_tutup`, `deskripsi`, `foto`) VALUES
+(1, 'Mayong Selfie', '08.00', '18.00', 'Ayo Buruan Ke Mayong Selfie', 'ayunan1.jpg'),
+(2, 'Nature Tracking', '08.00', '16.00', 'Enjoy Your Tracking', 'kik.png'),
+(3, 'Ayunan', '08.00', '16.00', 'Ayo Nikmati Keseruannya', 'ayunan.jpg'),
+(4, 'Rest Area View', '08.00', '16.00', 'Nikmati Perjalannya', 'kumpul.png'),
+(5, 'Loloh Pak Arya', '-', '-', 'Meloloh Dumun Semeton', 'loloh.jpg'),
+(8, 'Loloh Pak Arya', '08.00', '16.00', 'Nikmati Pemandangannya', 'mayong2.png');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_informasi`
+--
+
+CREATE TABLE `tb_informasi` (
+  `id_informasi` int(11) NOT NULL,
+  `nama_informasi` varchar(256) NOT NULL,
+  `deskripsi` varchar(256) NOT NULL,
+  `foto` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_informasi`
+--
+
+INSERT INTO `tb_informasi` (`id_informasi`, `nama_informasi`, `deskripsi`, `foto`) VALUES
+(1, 'Pariwisata Desa Mayong', 'Singaraja (Antaranews Bali) - Warga Desa Mayong, Kecamatan Seririt, Kabupaten Buleleng,mempertahankan persawahan dan perkebunan untuk ketahanan pangansekaligus daya tarik wisata, mengingat wisatawan luar negeri sudah mengenal desa itu sebagai desa agraris ', 'mayong3.jpg');
 
 -- --------------------------------------------------------
 
@@ -67,6 +91,12 @@ ALTER TABLE `daftar_wisata`
   ADD PRIMARY KEY (`id_wisata`);
 
 --
+-- Indeks untuk tabel `tb_informasi`
+--
+ALTER TABLE `tb_informasi`
+  ADD PRIMARY KEY (`id_informasi`);
+
+--
 -- Indeks untuk tabel `tb_kategori`
 --
 ALTER TABLE `tb_kategori`
@@ -80,7 +110,13 @@ ALTER TABLE `tb_kategori`
 -- AUTO_INCREMENT untuk tabel `daftar_wisata`
 --
 ALTER TABLE `daftar_wisata`
-  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_informasi`
+--
+ALTER TABLE `tb_informasi`
+  MODIFY `id_informasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori`

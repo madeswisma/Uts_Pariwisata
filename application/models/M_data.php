@@ -26,7 +26,6 @@ class M_data extends CI_Model
             'jam_buka' => $post['jam_buka'],
             'jam_tutup' => $post['jam_tutup'],
             'deskripsi' => $post['deskripsi'],
-            'harga_tiket' => $post['harga_tiket'],
             'foto' => $_FILES['foto']['name'],
 
         );
@@ -45,7 +44,6 @@ class M_data extends CI_Model
             'jam_buka' => $post['jam_buka'],
             'jam_tutup' => $post['jam_tutup'],
             'deskripsi' => $post['deskripsi'],
-            'harga_tiket' => $post['harga_tiket'],
             'foto' => $_FILES['foto']['name'],
 
         );
@@ -58,7 +56,30 @@ class M_data extends CI_Model
 
         $this->db->from('daftar_wisata');
         $this->db->like('nama_wisata', $keyword);
-        $this->db->or_like('harga_tiket', $keyword);
         return $this->db->get()->result_array();
+    }
+
+    ///
+    function data_infromasi()
+    {
+        $data = $this->db->get('tb_informasi')->result_array();
+        return $data;
+    }
+    public function save_update_informasi($post)
+    {
+        $konfigurasi = array(
+            'allowed_types' => 'jpg|jpeg|gif|png|bmp',
+            'upload_path' => realpath('./media/images')
+        );
+        $this->load->library('upload', $konfigurasi);
+        $this->upload->do_upload('foto');
+        $data = array(
+            'nama_informasi' => $post['nama_informasi'],
+            'deskripsi' => $post['deskripsi'],
+            'foto' => $_FILES['foto']['name'],
+
+        );
+        $this->db->where('md5(id_informasi)', $post['id_informasi']);
+        $this->db->update('tb_informasi', $data);
     }
 }

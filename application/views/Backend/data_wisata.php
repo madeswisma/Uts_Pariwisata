@@ -17,21 +17,17 @@
 
 
         <div class="card-body">
-            <!-- Search Start -->
-            <br>
-            <div class="col-lg-12">
-                <div class="content-panel">
-                    <p>
-                        <form action="<?= site_url('Backend/search_wisata'); ?>" method="post">
-                            <div class="col-lg-4">
-                                <input type="text" class="form-control" placeholder="search keyword.." name="keyword" autocomplete="off" autofocus>
-                            </div>
-                            <input class="btn btn-primary" type="submit" name="search_submit" value="Cari">
-                    </p>
+            <!-- Topbar Search -->
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="<?= site_url('Backend/search_wisata'); ?>" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="search keyword.." name="keyword" autocomplete="off" autofocus>
+                    <div class="input-group-append">
+                        <input class="btn btn-primary" type="submit" name="search_submit" value="Cari">
+                    </div>
                 </div>
-                </form>
-            </div>
-            <!-- Search Stop -->
+                <br>
+            </form>
+            </br>
 
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -41,7 +37,6 @@
                             <th class="text-center">Nama Wisata</th>
                             <th class="text-center">Jam Buka</th>
                             <th class="text-center">Jam Tutup</th>
-                            <th class="text-center">Harga Tiket</th>
                             <th class="text-center">Deskripsi</th>
                             <th class="text-center">Foto</th>
                             <th colspan="2" class="text-center">Aksi</th>
@@ -56,7 +51,6 @@
                                 <td><?= $val['nama_wisata']; ?></td>
                                 <td><?= $val['jam_buka']; ?></td>
                                 <td><?= $val['jam_tutup']; ?></td>
-                                <td><?= $val['harga_tiket']; ?></td>
                                 <td><?= $val['deskripsi']; ?></td>
                                 <td><img width='150' height='100' src="<?= base_url('media/images/' . $val['foto']); ?>"></td>
                                 <td class="text-center"><a href="<?= site_url('Backend/update_register_wisata/' . md5($val['id_wisata'])) ?>">
@@ -73,5 +67,5 @@
             </div>
         </div>
     </div>
-</div>
+
 </div>
